@@ -1,7 +1,7 @@
 const express = require('express');
 
 // Routers
-const { registrationRouter } = require('./routes/registration.routes')
+const { registrationRouter } = require('./routes/registration.routes');
 
 // Init our Express app
 const app = express();
@@ -14,7 +14,6 @@ app.use('/api/v1/registrations', registrationRouter);
 
 // Catch non-existing endpoints
 app.all('*', (req, res) => {
-    
   res.status(404).json({
     status: 'error',
     message: `${req.method} ${req.url} doesn't exists in our server`,
